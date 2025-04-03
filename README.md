@@ -1,7 +1,7 @@
 
 # Katasubu - Subtitle Translator
 
-Katasubu adalah Website untuk menerjemahkan file subtitle (.srt) ke berbagai bahasa dengan mudah dan cepat. Aplikasi ini memanfaatkan teknologi pemrosesan bahasa alami untuk memberikan terjemahan yang akurat dan mempertahankan nuansa konteks dalam subtitle.
+Katasubu adalah Website untuk menerjemahkan file subtitle (.srt) ke berbagai bahasa dengan mudah dan cepat. Website ini memanfaatkan teknologi pemrosesan bahasa alami untuk memberikan terjemahan yang akurat dan mempertahankan nuansa konteks dalam subtitle.
 
 ## Cerita Di Balik Proyek Ini
 
