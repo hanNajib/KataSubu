@@ -1,6 +1,7 @@
 // components/subtitle-translator.tsx
 "use client";
 import React, { useState } from "react";
+import axios from "axios";
 import { FileUpload } from "./file-upload";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -14,6 +15,7 @@ export default function SubtitleTranslator() {
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [filename, setFilename] = useState<string>('');
 
   const handleFileUpload = (newFiles: File[]) => {
     if (newFiles.length > 0) {
@@ -39,23 +41,46 @@ export default function SubtitleTranslator() {
     const formData = new FormData();
     formData.append("file", files[0]);
     formData.append("lang", language);
+    const originalName = files[0].name.replace(/\.srt$/i, "");
+    const translatedName = `${originalName} - KataSubu.${language}.srt`;
+    setFilename(translatedName);
 
     try {
-      const response = await fetch("https://katasubuapi.vercel.app/subtitle/upload", {
-        method: "POST",
-        body: formData
+      const response = await axios({
+        method: 'POST',
+        // url: 'https://katasubuapi.vercel.app/subtitle/upload',
+        url: 'https://katasubuapi-production.up.railway.app/subtitle/upload',
+        // url: 'http://127.0.0.1:3001/subtitle/upload',
+        data: formData,
+        timeout: 90000, // 90 seconds timeout for large files
+        responseType: 'blob',
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
-
-      if (!response.ok) {
-        throw new Error("Failed to upload file!");
-      }
-
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
+      
+      const url = URL.createObjectURL(response.data);
       setDownloadUrl(url);
     } catch (error) {
       console.error("Error:", error);
-      setError("An error occurred during upload!");
+      
+      if (axios.isAxiosError(error)) {
+        if (error.message === "Network Error") {
+          setError("admin deploy api ke vercel njir, kena timeout lee, pake file kecil pasti bisa");
+        } else if (error.code === "ECONNABORTED") {
+          setError("Request timed out. The file might be too large or the server is busy.");
+        } else if (error.response?.status === 504) {
+          setError("Gateway timeout error. Please try again later or with a smaller file.");
+        } else if (error.response?.status === 413) {
+          setError("File too large. Please upload a smaller file.");
+        } else if (error.response) {
+          setError(`Server error: ${error.response.status} ${error.response.statusText}`);
+        } else {
+          setError("Upload failed. Please try again later.");
+        }
+      } else {
+        setError("An unexpected error occurred.");
+      }
     } finally {
       setIsUploading(false);
     }
@@ -127,7 +152,7 @@ export default function SubtitleTranslator() {
         {downloadUrl && (
           <a 
             href={downloadUrl} 
-            download="translated.srt" 
+            download={filename} 
             className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full max-w-xs"
           >
             Download Translated Subtitle
