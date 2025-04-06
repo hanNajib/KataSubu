@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Katasubu - Subtitle Translator
 
-First, run the development server:
+Katasubu adalah Website untuk menerjemahkan file subtitle (.srt) ke berbagai bahasa dengan mudah dan cepat. Website ini memanfaatkan teknologi pemrosesan bahasa alami untuk memberikan terjemahan yang akurat dan mempertahankan nuansa konteks dalam subtitle.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Cerita Di Balik Proyek Ini
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Semua berawal dari kebiasaan menonton anime dengan subtitle bahasa Inggris. Terkadang, subtitle yang disediakan tidak sesuai dengan bahasa yang kita inginkan, dan terkadang ada hal-hal yang tidak cocok dengan konteks. Dari situlah muncul ide untuk membuat sebuah website yang dapat membantu menerjemahkan file subtitle (.srt) ke berbagai bahasa dengan lebih mudah dan cepat. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Dengan **KataSubu**, saya ingin memberikan pengalaman menonton yang lebih nyaman bagi orang-orang yang membutuhkan subtitle dalam bahasa mereka, tanpa mengubah konteks atau makna dari setiap teks.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Fitur
 
-## Learn More
+- **Unggah file subtitle (.srt)** untuk diterjemahkan.
+- **Pilih bahasa tujuan** dari berbagai pilihan bahasa, termasuk Indonesia, Inggris, Jepang, dan banyak lagi.
+- **Download file subtitle** yang sudah diterjemahkan dengan format yang sesuai.
+- Menyimpan struktur file subtitle dengan timestamp yang tepat.
 
-To learn more about Next.js, take a look at the following resources:
+## Teknologi yang Digunakan
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend**: NextJs
+- **Backend**: NestJS
+- **API**: Google Gemini 2.5 pro experimental API (untuk terjemahan)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Kontribusi
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Jika kamu ingin berkontribusi pada proyek ini, silakan lakukan fork, buat perubahan, dan buat pull request.
+(kontrib bg, ayo mas mas frontend)
