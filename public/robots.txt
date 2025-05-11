@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://katasubu.my.id/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
