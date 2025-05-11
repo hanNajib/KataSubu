@@ -15,7 +15,6 @@ export const FileUpload = ({
 
   const handleFileChange = (newFiles: File[]) => {
     setFiles((prevFiles) => {
-      // Replace existing files with new ones
       const updatedFiles = [...newFiles];
       onChange && onChange(updatedFiles);
       return updatedFiles;

@@ -87,9 +87,8 @@ export default function SubtitleTranslator() {
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto">
+    <>
       <CardHeader>
-        <CardTitle className="text-center">KataSubu - Subtitle Translator</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col items-center space-y-4">
         <div className="w-full">
@@ -166,6 +165,6 @@ export default function SubtitleTranslator() {
           </Alert>
         )}
       </CardContent>
-    </Card>
+    </>
   );
 }
