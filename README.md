@@ -20,7 +20,7 @@ Dengan **KataSubu**, saya ingin memberikan pengalaman menonton yang lebih nyaman
 
 - **Frontend**: NextJs
 - **Backend**: NestJS
-- **API**: Google Gemini 2.5 pro experimental API (untuk terjemahan)
+- **API**: Google Gemini 1.5 Flash API (untuk terjemahan)
 
 ## Kontribusi
 
