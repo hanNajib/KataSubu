@@ -5,7 +5,7 @@ Katasubu adalah Website untuk menerjemahkan file subtitle (.srt) ke berbagai bah
 
 ## Cerita Di Balik Proyek Ini
 
-Semua berawal dari kebiasaan menonton anime dengan subtitle bahasa Inggris. Terkadang, subtitle yang disediakan tidak sesuai dengan bahasa yang kita inginkan, dan terkadang ada hal-hal yang tidak cocok dengan konteks. Dari situlah muncul ide untuk membuat sebuah website yang dapat membantu menerjemahkan file subtitle (.srt) ke berbagai bahasa dengan lebih mudah dan cepat. 
+Semua berawal dari kebiasaan menonton film dengan subtitle bahasa Inggris. Terkadang, subtitle yang disediakan tidak sesuai dengan bahasa yang kita inginkan, dan terkadang ada hal-hal yang tidak cocok dengan konteks. Dari situlah muncul ide untuk membuat sebuah website yang dapat membantu menerjemahkan file subtitle (.srt) ke berbagai bahasa dengan lebih mudah dan cepat. 
 
 Dengan **KataSubu**, saya ingin memberikan pengalaman menonton yang lebih nyaman bagi orang-orang yang membutuhkan subtitle dalam bahasa mereka, tanpa mengubah konteks atau makna dari setiap teks.
 
